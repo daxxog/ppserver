@@ -28,7 +28,7 @@ if(argv.help) {
 	app.use(express.bodyParser());
 
 	var packageDotJson = JSON.parse(fs.readFileSync(__dirname + '/package.json', 'utf8')),
-		_adobeReader = glob('/Program Files*/Adobe/Reader*/Reader/AcroRd32.exe', {sync: true}),
+		_adobeReader = glob('/Program Files*/Adobe/Reader*/Reader/AcroRd*.exe', {sync: true}),
 		adobeReader = _adobeReader.length > 0 ? _adobeReader[0] : false,
 		server_info = {
 			name: packageDotJson.name,
